@@ -1,0 +1,488 @@
+                                                                    Bashat Parween
+
+1)Explain the concept of Type casting with the help of example.
+Ans: -  Type casting is a method or process that converts a data type into another data type in both ways manually and automatically. The automatic conversion is done by the compiler and manual conversion performed by the programmer.
+
+There are two types of type casting:
+i) Widening Type Casting
+ii) Narrowing Type Casting
+
+i)  Widening Type Casting
+     Converting a lower data type into a higher one is called widening type casting. It is also known as implicit conversion or casting down. It is done automatically. It is safe because there is no chance to lose data. It takes place when:
+o) Both data types must be compatible with each other.
+o) The target type must be larger than the source type.
+
+byte -> short -> char -> int -> long -> float -> double  
+
+                                     WideningTypeCastingExample.java
+public class WideningTypeCastingExample  
+{  
+public static void main(String[] args)  
+{  
+int x = 7;  
+//automatically converts the integer type into long type  
+long y = x;  
+//automatically converts the long type into float type  
+float z = y;  
+System.out.println("Before conversion, int value "+x);  
+System.out.println("After conversion, long value "+y);  
+System.out.println("After conversion, float value "+z);  
+}  
+}  
+
+Output
+Before conversion, the value is: 7
+After conversion, the long value is: 7
+After conversion, the float value is: 7.0
+
+
+ii)   Narrowing Type Casting
+      Converting a higher data type into a lower one is called narrowing type casting. It is also known as explicit conversion or casting up. It is done manually by the programmer. If we do not perform casting then the compiler reports a compile-time error.
+
+double -> float -> long -> int -> char -> short -> byte  
+
+                                              NarrowingTypeCastingExample.java
+public class NarrowingTypeCastingExample  
+{  
+public static void main(String args[])  
+{  
+double d = 166.66;  
+//converting double data type into long data type  
+long l = (long)d;  
+//converting long data type into int data type  
+int i = (int)l;  
+System.out.println("Before conversion: "+d);  
+//fractional part lost  
+System.out.println("After conversion into long type: "+l);  
+//fractional part lost  
+System.out.println("After conversion into int type: "+i);  
+}  
+}  
+
+Output
+Before conversion: 166.66
+After conversion into long type: 166
+After conversion into int type: 166
+
+
+
+
+2)    Explain the concept of OOPS By using a program which will combine each concept of OOPS.
+     Object-Oriented Programming or OOPs refers to languages that use objects in programming, they use objects as a primary source to implement what is to happen in the code. Objects are seen by the viewer or user, performing tasks assigned by you. Object-oriented programming aims to implement real-world entities like inheritance, hiding, polymorphism etc. in programming.
+
+o) Access Modifier: Defines the access type of the method i.e. from where it can be accessed in your application. In Java, there are 4 types of access specifiers: 
+i) public: Accessible in all classes in your application.
+ii) protected: Accessible within the package in which it is defined and in its subclass(es) (including subclasses declared outside the package).
+iii) private: Accessible only within the class in which it is defined.
+iv) default (declared/defined without using any modifier): Accessible within the same class and package within which its class is defined.
+
+o) The return type: The data type of the value returned by the method or void if it does not return a value.
+o) Method Name: The rules for field names apply to method names as well, but the convention is a little     different.
+o) Parameter list: Comma-separated list of the input parameters that are defined, preceded by their data type,    within the enclosed parentheses. If there are no parameters, you must use empty parentheses ().
+o) Exception list: The exceptions you expect the method to throw. You can specify these exception(s).
+o) Method body: It is the block of code, enclosed between braces, that you need to execute to perform your     intended operations.
+
+OOPS concepts are as follows: 
+a) Class
+b) Object 
+c) Method and method passing
+d) Pillars of OOPs
+     .) Abstraction
+    .) Encapsulation
+    .)  Inheritance
+    .)  Polymorphism
+        .: Compile-time polymorphism
+       .: Runtime polymorphism
+
+A class is a user-defined blueprint or prototype from which objects are created. It represents the set of properties or methods that are common to all objects of one type. Using classes, you can create multiple objects with the same behavior instead of writing their code multiple times. This includes classes for objects occurring more than once in your code. In general, class declarations can include these components in order: 
+
+i) Modifiers: A class can be public or have default access (Refer to this for details).
+ii) Class name: The class name should begin with the initial letter capitalized by convention.
+iii) Superclass : The name of the class’s parent (superclass), if any, preceded by the keyword extends. A class      can only extend (subclass) one parent.
+iv) Interfaces (if any): A comma-separated list of interfaces implemented by the class, if any, preceded by the keyword implements. A class can implement more than one interface.
+v) Body: The class body is surrounded by braces, { }.
+
+An object is a basic unit of Object-Oriented Programming that represents real-life entities. A typical Java program creates many objects, which as you know, interact by invoking methods. The objects are what perform your code, they are the part of your code visible to the viewer/user. An object mainly consists of: 
+
+i) State: It is represented by the attributes of an object. It also reflects the properties of an object.
+ii) Behavior: It is represented by the methods of an object. It also reflects the response of an object to other    objects.
+iii) Identity: It is a unique name given to an object that enables it to interact with other objects.
+iv) Method: A method is a collection of statements that perform some specific task and return the result to the caller. A method can perform some specific task without returning anything. Methods allow us to reuse the code without retyping it, which is why they are considered time savers. In Java, every method must be part of some class, which is different from languages like C, C++, and Python. 
+
+                               class and objects one simple java program :    
+
+public class GFG {
+      
+    static String Employee_name;
+    static float Employee_salary;
+  
+    static void set(String n, float p) {
+        Employee_name  = n;
+        Employee_salary  = p;
+    }
+  
+    static void get() {
+        System.out.println("Employee name is: " +Employee_name );
+        System.out.println("Employee CTC is: " + Employee_salary);
+    }
+  
+    public static void main(String args[]) {
+        GFG.set("Rathod Avinash", 10000.0f);
+        GFG.get();
+    }
+}
+Output
+Employee name is: Rathod Avinash
+Employee CTC is: 10000.0
+
+Pillar 1: Abstraction
+Data Abstraction is the property by virtue of which only the essential details are displayed to the user. The trivial or non-essential units are not displayed to the user. Ex: A car is viewed as a car rather than its individual components.
+Data Abstraction may also be defined as the process of identifying only the required characteristics of an object, ignoring the irrelevant details. The properties and behaviors of an object differentiate it from other objects of similar type and also help in classifying/grouping the object.
+
+Consider a real-life example of a man driving a car. The man only knows that pressing the accelerators will increase the car speed or applying brakes will stop the car, but he does not know how on pressing the accelerator, the speed is actually increasing. He does not know about the inner mechanism of the car or the implementation of the accelerators, brakes etc. in the car. This is what abstraction is. 
+
+Demonstration of Abstract class 
+
+//abstract class
+abstract class GFG{
+  //abstract methods declaration
+  abstract void add();
+  abstract void mul();
+  abstract void div();
+}
+Pillar 2: Encapsulation
+It is defined as the wrapping up of data under a single unit. It is the mechanism that binds together the code and the data it manipulates. Another way to think about encapsulation is that it is a protective shield that prevents the data from being accessed by the code outside this shield. 
+
+Technically, in encapsulation, the variables or the data in a class is hidden from any other class and can be accessed only through any member function of the class in which they are declared.
+In encapsulation, the data in a class is hidden from other classes, which is similar to what data-hiding does. So, the terms “encapsulation” and “data-hiding” are used interchangeably.
+Encapsulation can be achieved by declaring all the variables in a class as private and writing public methods in the class to set and get the values of the variables.
+Demonstration of Encapsulation:
+
+
+//Encapsulation using private modifier 
+  
+//Employee class contains private data called employee id and employee name
+class Employee {
+    private int empid;
+      private String ename;
+}
+Pillar 3: Inheritance 
+Inheritance is an important pillar of OOP (Object Oriented Programming). It is the mechanism in Java by which one class is allowed to inherit the features (fields and methods) of another class. We are achieving inheritance by using extends keyword. Inheritance is also known as “is-a” relationship.
+
+Let us discuss some frequently used important terminologies:
+
+Superclass: The class whose features are inherited is known as superclass (also known as base or parent class).
+Subclass: The class that inherits the other class is known as subclass (also known as derived or extended or child class). The subclass can add its own fields and methods in addition to the superclass fields and methods.
+Reusability: Inheritance supports the concept of “reusability”, i.e. when we want to create a new class and there is already a class that includes some of the code that we want, we can derive our new class from the existing class. By doing this, we are reusing the fields and methods of the existing class.
+Demonstration of Inheritance :
+
+
+//base class or parent class or super class
+class A{
+  //parent class methods
+  void method1(){}
+  void method2(){}
+}
+  
+//derived class or child class or base class
+class B extends A{  //Inherits parent class methods
+  //child class methods
+  void method3(){}
+  void method4(){}
+}
+Pillar 4: Polymorphism
+It refers to the ability of object-oriented programming languages to differentiate between entities with the same name efficiently. This is done by Java with the help of the signature and declaration of these entities. The ability to appear in many forms is called polymorphism.
+
+E.g.
+sleep(1000) //millis
+sleep(1000,2000) //millis,nanos
+
+
+
+3)Write a program to perform the following operation with the help of packages   
+  a:Armstrong NO
+  b:Check entered character is palindrom or not
+  c:Whether the given no. is prime or not
+  d:Average, smallest, greatest by using array 
+
+a:Armstrong Number
+// Java Program to find
+// Nth Armstrong Number
+import java.lang.Math;
+class Arms {
+    // Function to find Nth Armstrong Number
+    static int NthArmstrong(int n)
+    {
+        int count = 0;
+        // upper limit from integer
+        for (int i = 1; i <= Integer.MAX_VALUE; i++) {
+            int num = i, rem, digit = 0, sum = 0;
+            // Copy the value for num in num
+            num = i;
+            // Find total digits in num
+            digit = (int)Math.log10(num) + 1;
+            // Calculate sum of power of digits
+            while (num > 0) {
+                rem = num % 10;
+                sum = sum + (int)Math.pow(rem, digit);
+                num = num / 10;
+            }
+            // Check for Armstrong number
+            if (i == sum)
+                count++;
+            if (count == n)
+                return i;
+        }
+        return n;
+    }
+    // Driver Code
+    public static void main(String[] args)
+    {
+        int n = 12;
+        System.out.println(NthArmstrong(n));
+    }
+}
+// This code is contributed by Code_Mech.
+Output
+371
+
+b:Check entered character is palindrom or not
+class Main {
+  public static void main(String[] args) {
+
+    String str = "Radar", reverseStr = "";
+    
+    int strLength = str.length();
+
+    for (int i = (strLength - 1); i >=0; --i) {
+      reverseStr = reverseStr + str.charAt(i);
+    }
+
+    if (str.toLowerCase().equals(reverseStr.toLowerCase())) {
+      System.out.println(str + " is a Palindrome String.");
+    }
+    else {
+      System.out.println(str + " is not a Palindrome String.");
+    }
+  }
+}
+Output
+Radar is a Palindrome String.
+
+c:Wether the given no is prime or not
+public class Main {
+  public static void main(String[] args) {
+    int num = 29;
+    boolean flag = false;
+    for (int i = 2; i <= num / 2; ++i) {
+      // condition for nonprime number
+      if (num % i == 0) {
+        flag = true;
+        break;
+      }
+    }
+    if (!flag)
+      System.out.println(num + " is a prime number.");
+    else
+      System.out.println(num + " is not a prime number.");
+  }
+}
+Output
+29 is a prime number.
+
+d:Average, smallest, greatest by using array 
+import java.util.*; 
+import java.io.*; 
+ public class Exercise29 {
+ public static void main(String[] args)
+ {
+    int[] array_nums = {5, 7, 2, 4, 9};
+	System.out.println("Original Array: "+Arrays.toString(array_nums)); 
+	int max = array_nums[0];
+	int min = array_nums[0];
+	float sum = array_nums[0];
+	for(int i = 1; i < array_nums.length; i++)
+	{
+		sum  += array_nums[i];
+		if(array_nums[i] > max)
+			max = array_nums[i];
+		else if(array_nums[i] < min)
+			min = array_nums[i];
+	}
+	float x = ((sum-max-min) / (array_nums.length - 2));
+	System.out.printf("Compute the average value of an array of integers except the largest and smallest values: %.2f",x);
+	System.out.print("\n");	
+  }
+}
+Output:                                                                         
+Original Array: [5, 7, 2, 4, 9]                                        
+Compute the average value of an array of integers except the largest an
+d smallest values: 5.33
+
+
+
+4)Write a program to store the Employee data in the database by using Servlet and JDBC 
+To start with interfacing Java Servlet Program with JDBC Connection:
+
+i) Proper JDBC Environment should set-up along with database creation.
+ii) To do so, download the mysql-connector.jar file from the internet,
+iii) As it is downloaded, move the jar file to the apache-tomcat server folder,
+iv) Place the file in lib folder present in the apache-tomcat directory.
+v) To start with the basic concept of interfacing:
+
+Step i: Creation of Database and Table in MySQL
+As soon as jar file is placed in the folder, create a database and table in MySQL,
+mysql> create database company;
+Query OK, 1 row affected (4.10 sec)
+mysql> use company
+Database changed
+mysql> create table employee(id int(20), e_name varchar(50));
+Query OK, 0 rows affected (1.93 sec)
+
+mysql> desc employee;
++--------+-------------+------+-----+---------+-------+------------+--------
+| Field  | Type        |       Null     | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+------------+--------+
+| id     | int(20)        |       YES  |          | NULL    |             |       
+| e_name | varchar(50) | YES |         | NULL       |           |
++--------+-------------+------+-----+---------+-------+-------------+-------+
+2 rows in set (0.40 sec)
+
+Step ii: Implementation of required Web-pages
+Create a form in HTML file, where take all the inputs required to insert data into the database. Specify the servlet name in it, with the POST method as security is important aspects in database connectivity.
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insert Data</title>
+</head>
+<body>
+    <!-- Give Servlet reference to the form as an instances 
+    GET and POST services can be according to the problem statement-->
+    <form action="./InsertData" method="post">
+        <p>ID:</p> 
+        <!-- Create an element with mandatory name attribute,
+        so that data can be transfer to the servlet using getParameter() -->
+        <input type="text" name="id"/>
+        <br/>
+        <p>Employee name:</p> 
+        <input type="text" name="string"/>
+        <br/><br/><br/>
+        <input type="submit"/>
+    </form>
+</body>
+</html>
+
+Step iii: Creation of Java Servlet program with JDBC Connection
+To create a JDBC Connection steps are
+
+Import all the packages
+Register the JDBC Driver
+Open a connection
+Execute the query, and retrieve the result
+Clean up the JDBC Environment
+Create a separate class to create a connection of database, as it is a lame process to writing the same code snippet in all the program. Create a .java file which returns a Connection object.
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+  
+// This class can be used to initialize the database connection
+public class DatabaseConnection {
+    protected static Connection initializeDatabase()
+        throws SQLException, ClassNotFoundException
+    {
+        // Initialize all the information regarding
+        // Database Connection
+        String dbDriver = "com.mysql.cj.jdbc.Driver";
+        String dbURL = "jdbc:mysql:// localhost:3306/";
+        // Database name to access
+        String dbName = "company";
+        String dbUsername = "root";
+        String dbPassword = "root";
+  
+        Class.forName(dbDriver);
+        Connection con = DriverManager.getConnection(dbURL + dbName,dbUsername, dbPassword);
+        return con;
+    }
+}
+
+Step iv: To use this class method, create an object in Java Servlet program
+Below program shows Servlet Class which create a connection and insert the data in the employee table,
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+  
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+  
+// Import Database Connection Class file
+import code.DatabaseConnection;
+  
+// Servlet Name
+@WebServlet("/InsertData")
+public class InsertData extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+  
+    protected void doPost(HttpServletRequest request, 
+HttpServletResponse response)
+        throws ServletException, IOException
+    {
+        try {
+  
+            // Initialize the database
+            Connection con = DatabaseConnection.initializeDatabase();
+  
+            // Create a SQL query to insert data into demo table
+            // employee table consists of two columns, so two '?' is used
+            PreparedStatement st = con
+                   .prepareStatement("insert into employee values(?, ?)");
+  
+            // For the first parameter,
+            // get the data using request object
+            // sets the data to st pointer
+            st.setInt(1, Integer.valueOf(request.getParameter("id")));
+  
+            // Same for second parameter
+            st.setString(2, request.getParameter("e_name"));
+  
+            // Execute the insert command using executeUpdate()
+            // to make changes in database
+            st.executeUpdate();
+  
+            // Close all the connections
+            st.close();
+            con.close();
+  
+            // Get a writer pointer 
+            // to display the successful result
+            PrintWriter out = response.getWriter();
+            out.println("<html><body><b>Successfully Inserted"
+                        + "</b></body></html>");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+Step v: Get the data from the HTML file
+To get the data from the HTML file, the request object is used which calls getParameter() Method to fetch the data from the channel. After successful insertion, the writer object is created to display a success message.
+
+After insertion operation from Servlet, data will be reflected in MySQL Database
+
+Output:
+Result in MySQL Interface
+
+mysql> select * from employee;
++------+---------------+
+| id   | e_name   |
++------+---------------+
+|    1 | Neha       |
++------+---------------+
+1 row in set (0.06 sec)
